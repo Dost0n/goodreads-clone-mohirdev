@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+{% block title %} Edit review {% endblock %}
+{% block content %}
+
+<h1>Delete review</h1>
+<p> Book: {{book.title}}</p>
+<p> Comment: {{review.comment}}</p>
+
+<h5>Are you sure delete review?</h5>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <a href="{% url 'books:book_detail' book.id %}" class="btn btn-primary">No</a>
+    <button class="btn btn-danger" type="submit">Yes</button>
+</form>
+{% endblock%}
